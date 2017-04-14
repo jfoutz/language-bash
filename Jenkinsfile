@@ -17,7 +17,21 @@ pipeline {
     }
     stage('ask') {
       steps {
-        input(message: 'is stuff ok?', id: 'this is an id', ok: 'this is an ok')
+        parallel(
+          "ask": {
+            input(message: 'is stuff ok?', id: 'this is an id', ok: 'this is an ok')
+            
+          },
+          "": {
+            sh 'sleep 30'
+            
+          }
+        )
+      }
+    }
+    stage('') {
+      steps {
+        echo 'job\'s done'
       }
     }
   }
