@@ -25,6 +25,10 @@ pipeline {
           "error": {
             sh 'sleep 30'
             
+          },
+          "talk": {
+            echo 'hello'
+            
           }
         )
       }
