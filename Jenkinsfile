@@ -22,14 +22,14 @@ pipeline {
             input(message: 'is stuff ok?', id: 'this is an id', ok: 'this is an ok')
             
           },
-          "": {
+          "error": {
             sh 'sleep 30'
             
           }
         )
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         echo 'job\'s done'
       }
